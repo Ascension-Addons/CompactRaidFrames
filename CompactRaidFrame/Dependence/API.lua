@@ -19,10 +19,6 @@ local IsActiveBattlefieldArena	= IsActiveBattlefieldArena;
 
 local MAX_RAID_MEMBERS = MAX_RAID_MEMBERS;
 
-SOUNDKIT = SOUNDKIT or {};
-SOUNDKIT.IG_MAINMENU_OPTION 			= "Interface\\AddOns\\CompactRaidFrame\\Media\\Sounds\\SOUNDKIT\\852.ogg";
-SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON = "Interface\\AddOns\\CompactRaidFrame\\Media\\Sounds\\SOUNDKIT\\856.ogg";
-
 hooksecurefunc("BlizzardOptionsPanel_OnEvent", function(self, event, ...)
     if ( self:GetName() == "CompactUnitFrameProfiles" ) then
         CompactUnitFrameProfiles_OnEvent(self, event, ...);

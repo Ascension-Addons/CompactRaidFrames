@@ -539,9 +539,9 @@ end
 
 function CompactUnitFrameProfilesCheckButton_OnClick(self, button)
 	if ( self:GetChecked() ) then
-		PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+		PlaySound(856);
 	else
-		PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+		PlaySound(856);
 	end
 
 	CUFSetRaidProfileOption(CompactUnitFrameProfiles.selectedProfile, self.optionName, self:GetChecked() or false);

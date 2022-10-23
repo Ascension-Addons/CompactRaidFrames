@@ -191,7 +191,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+            PlaySound(856);
             CompactUnitFrameProfiles_SaveChanges(CompactUnitFrameProfiles);
           </OnClick>
         </Scripts>
@@ -203,7 +203,7 @@
         </Anchors>
         <Scripts>
           <OnClick>
-            PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+            PlaySound(856);
             CompactUnitFrameProfiles_ConfirmProfileDeletion(CUFGetActiveRaidProfile());
           </OnClick>
         </Scripts>
@@ -337,7 +337,7 @@
             <Scripts>
               <OnClick>
                 --Also clicked via the OnEnterPressed script in the EditBox.
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CompactUnitFrameProfiles_CreateProfile(strtrim(self:GetParent().editBox:GetText()));
                 CompactUnitFrameProfiles_HideNewProfileDialog();
               </OnClick>
@@ -350,7 +350,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CompactUnitFrameProfiles_HideNewProfileDialog();
               </OnClick>
             </Scripts>
@@ -377,7 +377,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 local newProfile = CUFGetRaidProfileName(1);
                 if ( newProfile == self:GetParent().profile ) then
                   newProfile = CUFGetRaidProfileName(2);
@@ -396,7 +396,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 self:GetParent():Hide();
               </OnClick>
             </Scripts>
@@ -423,7 +423,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CompactUnitFrameProfiles_CancelChanges(CompactUnitFrameProfiles);
                 CompactUnitFrameProfiles_AfterConfirmUnsavedChanges();
                 self:GetParent():Hide();
@@ -437,7 +437,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CompactUnitFrameProfiles_SaveChanges(CompactUnitFrameProfiles);
                 CompactUnitFrameProfiles_AfterConfirmUnsavedChanges();
                 self:GetParent():Hide();
@@ -451,7 +451,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 self:GetParent():Hide();
               </OnClick>
             </Scripts>
@@ -781,7 +781,7 @@
             </Anchors>
             <Scripts>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CompactRaidFrameManager_ResetContainerPosition();
               </OnClick>
             </Scripts>
