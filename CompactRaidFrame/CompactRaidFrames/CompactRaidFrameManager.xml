@@ -16,7 +16,7 @@
     <Size x="58" y="24" />
     <Scripts>
       <OnClick>
-        PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+        PlaySound(856);
         if UnitAffectingCombat("player") then return DEFAULT_CHAT_FRAME:AddMessage(COMPACT_UNIT_FRAME_COMBATLOCK_FUNC); end
         CompactRaidFrameManager_ToggleRoleFilter(self.role);
       </OnClick>
@@ -26,7 +26,7 @@
     <Size x="41" y="24" />
     <Scripts>
       <OnClick>
-        PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+        PlaySound(856);
         if UnitAffectingCombat("player") then return DEFAULT_CHAT_FRAME:AddMessage(COMPACT_UNIT_FRAME_COMBATLOCK_FUNC); end
         CompactRaidFrameManager_ToggleGroupFilter(self:GetID());
       </OnClick>
@@ -49,7 +49,7 @@
         tex:SetPoint("CENTER", self, "CENTER", 0, 0);
       </OnLoad>
       <OnClick>
-        PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+        PlaySound(856);
         SetRaidTarget("target", self:GetID());
       </OnClick>
       <OnMouseDown>
@@ -442,7 +442,7 @@
             <Scripts>
               <OnClick>
                 if UnitAffectingCombat("player") then return DEFAULT_CHAT_FRAME:AddMessage(COMPACT_UNIT_FRAME_COMBATLOCK_FUNC); end
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CUFSetRaidProfileOption(CUFGetActiveRaidProfile(), "locked", self.lockMode);
                 CompactRaidFrameManager_SetSetting("Locked", self.lockMode);
               </OnClick>
@@ -453,7 +453,7 @@
             <Scripts>
               <OnClick>
                 if UnitAffectingCombat("player") then return DEFAULT_CHAT_FRAME:AddMessage(COMPACT_UNIT_FRAME_COMBATLOCK_FUNC); end
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CUFSetRaidProfileOption(CUFGetActiveRaidProfile(), "shown", self.shownMode);
                 CompactRaidFrameManager_SetSetting("IsShown", self.shownMode);
               </OnClick>
@@ -465,7 +465,7 @@
               <OnClick>
                 if UnitAffectingCombat("player") then return DEFAULT_CHAT_FRAME:AddMessage(COMPACT_UNIT_FRAME_COMBATLOCK_FUNC); end
                 if UnitAffectingCombat("player") then return; end
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 ConvertToRaid();
               </OnClick>
             </Scripts>
@@ -539,7 +539,7 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                    PlaySound(856);
                     ToggleFriendsFrame(5)
                   </OnClick>
                 </Scripts>
@@ -551,7 +551,7 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                    PlaySound(856);
                     CUF_PartyInfo.DoCountdown(10);
                   </OnClick>
                 </Scripts>
@@ -563,7 +563,7 @@
                 </Anchors>
                 <Scripts>
                   <OnClick>
-                    PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                    PlaySound(856);
                     if ( CUFUnitIsGroupLeader("player") or CUFUnitIsGroupAssistant("player") ) then
                       DoReadyCheck();
                     end
@@ -587,7 +587,7 @@
                 <Scripts>
                   <OnMouseDown>
                     UIMenuButtonStretchMixin.OnMouseDown(self, button);
-                    PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                    PlaySound(856);
                     ToggleDropDownMenu(1, nil, self.dropDown, self:GetName(), 0, 0);
                   </OnMouseDown>
                 </Scripts>
@@ -631,7 +631,7 @@
                 end
               </OnEvent>
               <OnClick>
-                PlaySoundFile(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                PlaySound(856);
                 CUFSetEveryoneIsAssistant(self:GetChecked());
               </OnClick>
               <OnEnter>
