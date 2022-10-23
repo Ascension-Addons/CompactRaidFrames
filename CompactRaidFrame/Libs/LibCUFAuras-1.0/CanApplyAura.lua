@@ -17,6 +17,33 @@ local function SetAuraInfo(canApplyAura, appliesOnlyYourself)
 end
 
 local UNIT_CAN_APPLY_AURAS = {
+    --Ascension
+    ["HERO"] = {},
+
+    --CoA
+    ["BARBARIAN"] = {},
+    ["CHRONOMANCER"] = {},
+    ["CULTIST"] = {},
+    ["DEMONHUNTER"] = {},
+    ["FLESHWARDEN"] = {},
+    ["GUARDIAN"] = {},
+    ["MONK"] = {},
+    ["NECROMANCER"] = {},
+    ["PROPHET"] = {},
+    ["PYROMANCER"] = {},
+    ["RANGER"] = {},
+    ["REAPER"] = {},
+    ["SONOFARUGAL"] = {},
+    ["SPIRITMAGE"] = {},
+    ["STARCALLER"] = {},
+    ["STORMBRINGER"] = {},
+    ["SUNCLERIC"] = {},
+    ["TINKER"] = {},
+    ["WILDWALKER"] = {},
+    ["WITCHDOCTOR"] = {},
+    ["WITCHHUNTER"] = {},
+
+    --WotLK
     ["DEATHKNIGHT"] =
         {
             [48265] = SetAuraInfo(true, true),  -- Unholy Presence
