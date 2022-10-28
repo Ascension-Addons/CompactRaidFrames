@@ -2,7 +2,7 @@
 -- SpecializedAbsorbs
 ------------------------------------------------------------------------
 
-local MAJOR, MINOR = "SpecializedAbsorbs-1.0", 4
+local MAJOR, MINOR = "SpecializedAbsorbs-1.0", 5
 local lib, oldminor = LibStub:NewLibrary(MAJOR, MINOR)
 if not lib then return end
 local Core
@@ -409,6 +409,9 @@ function Core.Enable()
 	elseif playerclass == "PRIEST" then
 		Core.RegisterEvent("PLAYER_DAMAGE_DONE_MODS")
 	elseif playerclass == "WARLOCK" then
+		Core.RegisterEvent("PLAYER_DAMAGE_DONE_MODS")
+	elseif playerclass == "HERO" then
+		Core.RegisterEvent("UNIT_ATTACK_POWER")
 		Core.RegisterEvent("PLAYER_DAMAGE_DONE_MODS")
 	end
 

@@ -17,8 +17,6 @@ local function SetAuraInfo(canApplyAura, appliesOnlyYourself)
 end
 
 local UNIT_CAN_APPLY_AURAS = {
-    --Ascension
-    ["HERO"] = {},
 
     --CoA
     ["BARBARIAN"] = {},
@@ -218,6 +216,16 @@ local UNIT_CAN_APPLY_AURAS = {
             [3411]  = SetAuraInfo(true, false), -- Intervene
         },
 };
+
+if PLAYER_CLASS == "HERO" then
+    local t = {}
+    for _, class in pairs(UNIT_CAN_APPLY_AURAS) do
+        table.append(t, class)
+    end
+
+    UNIT_CAN_APPLY_AURAS["HERO"] = t
+end
+
 lib.UNIT_CAN_APPLY_AURAS = UNIT_CAN_APPLY_AURAS;
 
 local function SetNewCompanion(spellID)

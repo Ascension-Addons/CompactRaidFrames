@@ -9,7 +9,7 @@
 ]]
 
 local MAJOR_VERSION = "LibResComm-1.0"
-local MINOR_VERSION = 90000 + tonumber(("$Revision: 92 $"):match("%d+"))
+local MINOR_VERSION = 90000 + tonumber(("$Revision: 93 $"):match("%d+"))
 
 local lib = LibStub:NewLibrary(MAJOR_VERSION, MINOR_VERSION)
 if not lib then return end
@@ -111,7 +111,7 @@ end
 
 local playerName = UnitName("player")
 local _, playerClass = UnitClass("player")
-local isResser = (playerClass == "PRIEST") or (playerClass == "SHAMAN") or (playerClass == "PALADIN") or (playerClass == "DRUID")
+local isResser = (playerClass == "PRIEST") or (playerClass == "SHAMAN") or (playerClass == "PALADIN") or (playerClass == "DRUID") or (playerClass == "HERO") 
 
 -- Last target name from UNIT_SPELLCAST_SENT
 local sentTargetName = nil
@@ -130,14 +130,23 @@ local isCasting = nil
 local activeRes = {}
 
 local resSpell, combatResSpell -- avoid creating tables we're just going to discard immediately
-if playerClass == "DRUID" then
+if not resSpell and CA_IsSpellKnown(50769) then
 	resSpell = GetSpellInfo(50769) -- Revive
+end
+
+if not combatResSpell and CA_IsSpellKnown(20484) then
 	combatResSpell = GetSpellInfo(20484) -- Rebirth
-elseif playerClass == "PALADIN" then
+end
+
+if not resSpell and CA_IsSpellKnown(7328) then
 	resSpell = GetSpellInfo(7328) -- Redemption
-elseif playerClass == "PRIEST" then
+end
+
+if not resSpell and CA_IsSpellKnown(2006) then
 	resSpell = GetSpellInfo(2006) -- Resurrection
-elseif playerClass == "SHAMAN" then
+end
+
+if not resSpell and CA_IsSpellKnown(2008) then
 	resSpell = GetSpellInfo(2008) -- Ancestral Spirit
 end
 

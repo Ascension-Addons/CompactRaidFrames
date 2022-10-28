@@ -1204,7 +1204,7 @@ do
 		local unit = r.unit
 		if (class == "ROGUE" or class == "HUNTER") then
 			role = "melee"
-		elseif (class == "MAGE" or class == "WARLOCK") then
+		elseif (class == "MAGE" or class == "WARLOCK" or class == "HERO") then -- idk where else to put hero, too much work to fix atm
 			role = "caster"
 		elseif (r.talents and r.talents[r.active]) then
 			if (class == "DEATHKNIGHT") then

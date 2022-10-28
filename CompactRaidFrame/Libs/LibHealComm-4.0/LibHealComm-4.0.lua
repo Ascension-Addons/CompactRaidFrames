@@ -1,5 +1,5 @@
 local major = "LibHealComm-4.0"
-local minor = 67
+local minor = 68
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local HealComm = LibStub:NewLibrary(major, minor)
@@ -102,7 +102,7 @@ local activeHots, activePets = HealComm.activeHots, HealComm.activePets
 
 -- Figure out what they are now since a few things change based off of this
 local playerClass = select(2, UnitClass("player"))
-local isHealerClass = playerClass == "DRUID" or playerClass == "PRIEST" or playerClass == "SHAMAN" or playerClass == "PALADIN"
+local isHealerClass = playerClass == "DRUID" or playerClass == "PRIEST" or playerClass == "SHAMAN" or playerClass == "PALADIN" or playerClass == "HERO"
 
 -- Stolen from Threat-2.0, compresses GUIDs from 18 characters to around 8 - 9, 50%/55% savings
 -- 44 = , / 58 = : / 255 = \255 / 0 = line break / 64 = @ / 254 = FE, used for escape code so has to be escaped
@@ -646,7 +646,7 @@ local CalculateHealing, GetHealTargets, AuraHandler, CalculateHotHealing, ResetC
 
 -- DRUIDS
 -- All data is accurate as of 3.2.2 (build 10392)
-if( playerClass == "DRUID" ) then
+if( playerClass == "DRUID" or playerClass == "HERO" ) then
 	LoadClassData = function()
 		-- Rejuvenation
 		local Rejuvenation = GetSpellInfo(774)
@@ -972,8 +972,12 @@ end
 
 -- PALADINS
 -- All data is accurate as of 3.2.2 (build 10392)
-if( playerClass == "PALADIN" ) then
+if( playerClass == "PALADIN" or playerClass == "HERO" ) then
+	local _LoadClassData = LoadClassData
 	LoadClassData = function()
+		if _LoadClassData then
+			_LoadClassData()
+		end
 		-- Hot data, this is just so it realizes that FoL can be a hot so it will call the calculator
 		--local FlashofLight = GetSpellInfo(19750)
 		--hotData[FlashofLight] = true
@@ -1101,8 +1105,12 @@ end
 
 -- PRIESTS
 -- Accurate as of 3.2.2 (build 10392)
-if( playerClass == "PRIEST" ) then
+if( playerClass == "PRIEST" or playerClass == "HERO" ) then
+	local _LoadClassData = LoadClassData
 	LoadClassData = function()
+		if _LoadClassData then
+			_LoadClassData()
+		end
 		-- Hot data
 		local Renew = GetSpellInfo(139)
 		hotData[Renew] = {coeff = 1, interval = 3, ticks = 5, levels = {8, 14, 20, 26, 32, 38, 44, 50, 56, 60, 65, 70, 75, 80}, averages = {45, 100, 175, 245, 315, 400, 510, 650, 810, 970, 1010, 1110, 1235, 1400}}
@@ -1298,8 +1306,12 @@ end
 
 -- SHAMANS
 -- All spells accurate as of 3.2.2 (build 10392)
-if( playerClass == "SHAMAN" ) then
+if( playerClass == "SHAMAN" or playerClass == "HERO" ) then
+	local _LoadClassData = LoadClassData
 	LoadClassData = function()
+		if _LoadClassData then
+			_LoadClassData()
+		end
 		-- Hot data
 		-- Riptide
 		local Riptide = GetSpellInfo(61295)
